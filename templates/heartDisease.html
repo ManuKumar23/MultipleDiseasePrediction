@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prediction page</title>
+    <link rel="stylesheet" href="{% static '/miniProject/CSS/formStyle.css'%}">
+    <style>
+        body {
+            background-image: url("{% static '/miniProject/images/3607424.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+        button[type="submit"]{
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        button[type="submit"]:hover{
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <div class="form-container">
+            <h2>Please enter the following information</h2>
+            <form id="form1" action="heartDiseaseResult">
+                <div class="form-group">
+                    <label>Age:</label>
+                    <input type="text" name="n1">
+                </div>
+                <div class="form-group">
+                    <label>Sex:</label>
+                    <input type="text" name="n2">
+                </div>
+                <div class="form-group">
+                    <label>cp:</label>
+                    <input type="text" name="n3">
+                </div>
+                <div class="form-group">
+                    <label>trestbps:</label>
+                    <input type="text" name="n4">
+                </div>
+                <div class="form-group">
+                    <label>chol:</label>
+                    <input type="text" name="n5">
+                </div>
+                <div class="form-group">
+                    <label>fbs:</label>
+                    <input type="text" name="n6">
+                </div>
+                <div class="form-group">
+                    <label>restecg:</label>
+                    <input type="text" name="n7">
+                </div>
+                <div class="form-group">
+                    <label>thalach:</label>
+                    <input type="text" name="n8">
+                </div>
+                <div class="form-group">
+                    <label>exang:</label>
+                    <input type="text" name="n9">
+                </div>
+                <div class="form-group">
+                    <label>oldpeak:</label>
+                    <input type="text" name="n10">
+                </div>
+                <div class="form-group">
+                    <label>slope:</label>
+                    <input type="text" name="n11">
+                </div>
+                <div class="form-group">
+                    <label>ca:</label>
+                    <input type="text" name="n12">
+                </div>
+                <div class="form-group">
+                    <label>thal:</label>
+                    <input type="text" name="n13">
+                </div>
+                <div class="form-group">
+                    <label>OR Enter full input:</label>
+                    <input type="text" name="csvVals">
+                </div>
+            </form>
+            <button type="submit" form="form1" formaction="heartDiseaseResult">Predict</button>
+            <p>Result: {{result2}}</p>
+            <a href="/">Main Menu</a>
+        </div>
+    </div>
+</body>
+</html>

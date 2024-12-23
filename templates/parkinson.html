@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prediction page</title>
+    <link rel="stylesheet" href="{% static '/miniProject/CSS/formStyle.css'%}">
+    <style>
+        body {
+            background-image: url("{% static '/miniProject/images/3607424.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+        button[type="submit"]{
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        button[type="submit"]:hover{
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parkinson Disease Prediction</h1>
+        <div class="form-container">
+            <h2>Please enter the following information</h2>
+            <form id="form1" action="parkinsonResult">
+                <div class="form-group">
+                    <label>MDVP:Fo(Hz):</label>
+                    <input type="text" name="n1">
+                </div>
+                <div class="form-group">
+                    <label>MDVP:Fhi(Hz):</label>
+                    <input type="text" name="n2">
+                </div>
+                <div class="form-group">
+                    <label>MDVP:Flo(Hz):</label>
+                    <input type="text" name="n3">
+                </div>
+                <div class="form-group">
+                    <label>MDVP:Jitter(%):</label>
+                    <input type="text" name="n4">
+                </div>
+                <div class="form-group">
+                    <label>MDVP:Jitter(Abs):</label>
+                    <input type="text" name="n5">
+                </div>
+                <div class="form-group">
+                    <label>MDVP:RAP:</label>
+                    <input type="text" name="n6">
+                </div>
+                <div class="form-group">
+                    <label>MDVP:PPQ:</label>
+                    <input type="text" name="n7">
+                </div>
+                <div class="form-group">
+                    <label>Jitter:DDP:</label>
+                    <input type="text" name="n8">
+                </div>
+                <div class="form-group">
+                    <label>MDVP:Shimmer:</label>
+                    <input type="text" name="n9">
+                </div>
+                <div class="form-group">
+                    <label>MDVP:Shimmer(dB):</label>
+                    <input type="text" name="n10">
+                </div>
+                <div class="form-group">
+                    <label>Shimmer:APQ3:</label>
+                    <input type="text" name="n11">
+                </div>
+                <div class="form-group">
+                    <label>Shimmer:APQ5:</label>
+                    <input type="text" name="n12">
+                </div>
+                <div class="form-group">
+                    <label>MDVP:APQ:</label>
+                    <input type="text" name="n13">
+                </div>
+                <div class="form-group">
+                    <label>Shimmer:DDA:</label>
+                    <input type="text" name="n14">
+                </div>
+                <div class="form-group">
+                    <label>NHR:</label>
+                    <input type="text" name="n15">
+                </div>
+                <div class="form-group">
+                    <label>HNR:</label>
+                    <input type="text" name="n16">
+                </div>
+                <div class="form-group">
+                    <label>RPDE:</label>
+                    <input type="text" name="n17">
+                </div>
+                <div class="form-group">
+                    <label>DFA:</label>
+                    <input type="text" name="n18">
+                </div>
+                <div class="form-group">
+                    <label>spread1:</label>
+                    <input type="text" name="n19">
+                </div>
+                <div class="form-group">
+                    <label>spread2:</label>
+                    <input type="text" name="n20">
+                </div>
+                <div class="form-group">
+                    <label>D2:</label>
+                    <input type="text" name="n21">
+                </div>
+                <div class="form-group">
+                    <label>PPE:</label>
+                    <input type="text" name="n22">
+                </div>
+                <div class="form-group">
+                    <label>OR Enter full input:</label>
+                    <input type="text" name="csvVals">
+                </div>
+            </form>
+            <button type="submit" form="form1" formaction="parkinsonResult">Predict</button>
+            <p>Result: {{result2}}</p>
+            <a href="/">Main Menu</a>
+        </div>
+    </div>
+</body>
+</html>
